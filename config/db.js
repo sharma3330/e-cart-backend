@@ -9,6 +9,16 @@ const pool = mysql.createPool({
     connectionLimit: 10,
     queueLimit: 0,
   });
+  console.log({
+    port: process.env.DB_PORT,        
+    host: process.env.DB_HOST,
+    user: process.env.DB_USER,   
+    password: process.env.DB_PASS,
+    database: process.env.DATABASE,
+    waitForConnections: true,
+    connectionLimit: 10,
+    queueLimit: 0,
+  });
   
   pool.getConnection((err, connection) => {
     if (err) {
